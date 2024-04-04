@@ -1,276 +1,479 @@
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/phosphor-icons@0.0.1/dist/phosphor.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-GLhlTQ8iUNZdL7NlUNv1UsoMmSpqQJ/c5SHv1eUn9rJlMG61gazefA5G5dD5P5F" crossorigin="anonymous">
-    <title>Transtel-Maintainance</title>
-  </head>
-  <main>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a class="logo" href="#"><img src="TransTel_LogoWhite.svg" alt="Transtel Logo"></a>
-        <ul class="menu-links">
-          <span id="close-menu-btn" class="material-symbols-outlined">close</span>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">Solution</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-        <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
-      </nav>
-    </header>
-    <main>
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="70" viewBox="0 0 100 68">
-          <g id="large">
-            <path fill="none" stroke="#000" d="M55.8 38.5l6.2-1.2c0-1.8-.1-3.5-.4-5.3l-6.3-.2c-.5-2-1.2-4-2.1-6l4.8-4c-.9-1.6-1.9-3-3-4.4l-5.6 3c-1.3-1.6-3-3-4.7-4.1l2-6A30 30 0 0 0 42 8l-3.3 5.4c-2-.7-4.2-1-6.2-1.2L31.3 6c-1.8 0-3.5.1-5.3.4l-.2 6.3c-2 .5-4 1.2-6 2.1l-4-4.8c-1.6.9-3 1.9-4.4 3l3 5.6c-1.6 1.3-3 3-4.1 4.7l-6-2A32.5 32.5 0 0 0 2 26l5.4 3.3c-.7 2-1 4.2-1.2 6.2L0 36.7c0 1.8.1 3.5.4 5.3l6.3.2c.5 2 1.2 4 2.1 6l-4.8 4c.9 1.6 1.9 3 3 4.4l5.6-3c1.4 1.6 3 3 4.7 4.1l-2 6A30.5 30.5 0 0 0 20 66l3.4-5.4c2 .7 4 1 6.1 1.2l1.2 6.2c1.8 0 3.5-.1 5.3-.4l.2-6.3c2-.5 4-1.2 6-2.1l4 4.8c1.6-.9 3-1.9 4.4-3l-3-5.6c1.6-1.3 3-3 4.1-4.7l6 2A32 32 0 0 0 60 48l-5.4-3.3c.7-2 1-4.2 1.2-6.2zm-13.5 4a12.5 12.5 0 1 1-22.6-11 12.5 12.5 0 0 1 22.6 11z"/>
-            <animateTransform attributeName="transform" begin="0s" dur="3s" from="0 31 37" repeatCount="indefinite" to="360 31 37" type="rotate"/>
-          </g>
-          <g id="small">
-            <path fill="none" stroke="#000" d="M93 19.3l6-3c-.4-1.6-1-3.2-1.7-4.8L90.8 13c-.9-1.4-2-2.7-3.4-3.8l2.1-6.3A21.8 21.8 0 0 0 85 .7l-3.6 5.5c-1.7-.4-3.4-.5-5.1-.3l-3-5.9c-1.6.4-3.2 1-4.7 1.7L70 8c-1.5 1-2.8 2-3.9 3.5L60 9.4a20.6 20.6 0 0 0-2.2 4.6l5.5 3.6a15 15 0 0 0-.3 5.1l-5.9 3c.4 1.6 1 3.2 1.7 4.7L65 29c1 1.5 2.1 2.8 3.5 3.9l-2.1 6.3a21 21 0 0 0 4.5 2.2l3.6-5.6c1.7.4 3.5.5 5.2.3l2.9 5.9c1.6-.4 3.2-1 4.8-1.7L86 34c1.4-1 2.7-2.1 3.8-3.5l6.3 2.1a21.5 21.5 0 0 0 2.2-4.5l-5.6-3.6c.4-1.7.5-3.5.3-5.1zM84.5 24a7 7 0 1 1-12.8-6.2 7 7 0 0 1 12.8 6.2z"/>
-            <animateTransform attributeName="transform" begin="0s" dur="2s" from="0 78 21" repeatCount="indefinite" to="-360 78 21" type="rotate"/>
-          </g>
-        </svg>
-        <h1>Under Maintenance</h1>
-        <h2>Sorry for the inconvenience.</h2>
-        <h3>To contact us in the meantime please email:</h3>
-        <a>transtel@transtelindonesia.co.id</a>
-        <h3>Or</h3>
-        <a>(Phone) 021 5435 6600</a>
-        <a>(WhatsApp) 081 1918 1222</a>
-    </main>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--
-    <section class="hero-section">
-      <div class="content">
-        <h2>Welcome to Transtel</h2>
-        <h3>Your Telecommunication Partner</h3>
-        <p>
-          At Transtel, we're all about revolutionizing telecommunications. With our TransTel brand, we've been at the forefront of phone and application innovation for over a decade. Our goal is to make your communication needs simple and efficient.
-        </p>
-      </div>
-    </section>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Transtel Communications-Home</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/slick.css"/>
+
+        <link href="css/Transtel.css" rel="stylesheet">
+
+    </head>
     
-    <div class="aboutUs">
-      <div class="aboutInfo">
-        <div class="aboutInfoText fade-in" >
-        <h2>Our Experience</h2> 
-        <h3>Over a Decade of Excellence</h3>
-        <p>
-          For over a decade, PT Transindo Infotek has been a trusted communication solutions provider for businesses of all sizes throughout Indonesia. We are also designated as a "Worldwide Service Center" for Transtel products. Our offerings are known for their reliability, rigorous testing, and competitive edge.
-        </p>
-        </div>
-        <div class="aboutInfoImage fade-in">
-          <div class="img1"></div>
-        </div>
-      </div>
+    <body>
 
-    <div class="aboutInfo fade-in" style="margin-top: 5%;">
-      <div class="aboutInfoImage">
-      <div class="img2"></div>
-      </div>
-      <div class="aboutInfoText">
-      <h2>Our Team</h2>
-      <h3>Professional and Dedicated</h3>
-      <p class="mt-3">
-        With a professional and dedicated team, we are poised to deliver the best services and support to our valued customers.
-      </p>
-      </div>
-      
-    </div>
-
-    <div class="aboutInfo fade-in" style="margin-top: 5% !important;">
-      <div class="aboutInfoText">
-      <h2>What we offer</h2> 
-      <h3>Comprehensive Telecommunication Solutions</h3>
-      <p>
-        Transtel offers a diverse range of products and applications designed to meet international standards and address contemporary telecommunication needs, including:
-      </p>
-      <ul>
-        
-        <li>IP Telephony</li>
-        <li>VOIP Gateways</li>
-        <li>Contact Center/Call Center Solutions</li>
-        <li>Hotel Systems</li>
-        <li>Hospitality Solutions</li>
-        <li>Computer Integration Solutions</li>
-        <li>Wireless Technologies</li>
-        <li>Mobility Solutions</li>
-        <li>Customer-Centric Approach</li>
-      </ul>
-      </div>
-      <div class="aboutInfoImageOffer">
-        <div class="img3"></div>
-        <div class="img4"></div>
-        <div class="img5"></div>
-        <div class="img6"></div>
-      </div>
-    </div>
-
-    <div class="aboutInfo fade-in" style="margin-top: 5%;">
-      <div class="aboutInfoImage fade-in">
-        <div class="img7"></div>
-      </div>
-      <div class="aboutInfoText">
-        <h2>Global Footprint</h2>
-        <h3>From the USA to Taiwan, We're Everywhere</h3>
-        <p>
-          In the heart of Jupiter, Florida, our headquarters spearhead marketing, sales, technical support, product development, and distribution across North America. Meanwhile, our manufacturing facility in Taiwan produces cutting-edge telephone systems, and our R&D laboratory is busy innovating.
-          We've expanded into Malaysia and Indonesia through strategic joint ventures, and our products are making waves in the following countries:
-        </p>
-        <ul>
-          <li>United States</li>
-          <li>Mexico</li>
-          <li>Latin America</li>
-          <li>Caribbean</li>
-          <li>Saudi Arabia</li>
-          <li>Israel</li>
-          <li>Kuwait</li>
-          <li>Taiwan</li>
-          <li>Pacific Rim</li>
-          <li>Guam</li>
-        </ul>
-      </div>
-    </div>
-
-    </div>
-
-<!-->
-<!--
-    <section id="clients" class="section-bg">
-
-      <div class="container">
-
-        <div class="section-header fade-in">
-          <h3>Our Clients</h3>
-          <p>Introducing Some of Our Satisfied Clientele</p>
-        </div>
-
-        <div class="row no-gutters clients-wrap clearfix wow fadeInUp fade-in " style="visibility: visible; animation-name: fadeInUp;">
-
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/AccorHotels_Logo_2016.svg.png" class="img-fluid" alt="">
+        <section class="preloader">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
             </div>
-          </div>
+        </section>
+    
+        <main>
+
+            
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html" >
+                        <img src="images\TransTel_Logo.svg" alt="Transtel Logo">
+                    </a>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="maintainance.html">Products</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="downloads.html">Downloads</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="slick-slideshow">   
+                <div class="slick-custom">
+                    <img src="images/BackgroundImage.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+                                    <h1 class="slick-title">Welcome to Transtel</h1>
+
+                                    <p class="lead text-white mt-lg-3 mb-lg-5">Your Telecommunication Partner</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slick-custom">
+                    <img src="images/slideshow/Default_A_modern_city_skyline_with_digital_network_lines_overl_1.jpg" class="img-fluid" alt="">
+
+                    <div class="slick-bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-10">
+                                    <h1 class="slick-title">Seamless Communication Solutions</h1>
+
+                                    <p class="lead text-white mt-lg-3 mb-lg-5">Experience the power of seamless connectivity with our cutting-edge telecom solutions. Stay connected effortlessly, whether it's for business or personal use.</p>
+
+                                    <a href="maintainance.html" class="btn custom-btn">Explore products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="about section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 text-center">
+                            <h2 class="mb-5">Our Experience</h2>
+                        </div>
+
+                        <div class="col-lg-2 col-12 mt-auto mb-auto">
+                            <ul class="nav nav-pills mb-5 mx-auto justify-content-center align-items-center" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Introduction</button>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-youtube-tab" data-bs-toggle="pill" data-bs-target="#pills-youtube" type="button" role="tab" aria-controls="pills-youtube" aria-selected="true">What we offer</button>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-skill-tab" data-bs-toggle="pill" data-bs-target="#pills-skill" type="button" role="tab" aria-controls="pills-skill" aria-selected="false">Capabilites</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-10 col-12">
+                            <div class="tab-content mt-2" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                                    <div class="row">
+                                        <div class="col-lg-7 col-12">
+
+                                            <img src="images/our exp.jpg" class="img-fluid" alt="">
+                                        </div>
+
+                                        <div class="col-lg-5 col-12">
+                                            <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                                <h4 class="mb-3">Over a <span>Decade</span> of Excellence</h4>
+
+                                                <p>For over a decade, PT Transindo Infotek has been a trusted communication solutions provider for businesses of all sizes throughout Indonesia. We are also designated as a "Worldwide Service Center" for Transtel products. Our offerings are known for their reliability, rigorous testing, and competitive edge.</p>
+
+                                                <div class="mt-2 mt-lg-auto">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="pills-youtube" role="tabpanel" aria-labelledby="pills-youtube-tab">
+
+                                    <div class="row">
+                                        <div class="col-lg-7 col-12">
+                                            <div class="ratio ratio-16x9">
+                                                <!--<iframe src="https://www.youtube-nocookie.com/embed/f_7JqPDWhfw?controls=0" title="   Aq video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                                                <img src="images/shutterstock_226031854-1100x550.jpeg" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-5 col-12">
+                                            <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                                <h4 class="mb-3">Comprehensive Telecommunication Solutions</h4>
+
+                                                <p> Transtel offers a diverse range of products and applications designed to meet international standards and address contemporary telecommunication needs</p>
+
+
+                                                <div class="mt-2 mt-lg-auto">
+                                                    <a href="contact.html" class="custom-link mb-2">
+                                                        Work with us
+                                                        <i class="bi-arrow-right ms-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="pills-skill" role="tabpanel" aria-labelledby="pills-skill-tab">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-12">
+                                            <img src="images/highly-technical-meeting-780x470.jpg" class="img-fluid" alt="">
+                                        </div>
+
+                                        <div class="col-lg-5 col-12">
+                                            <div class="d-flex flex-column h-100 ms-lg-4 mt-lg-0 mt-5">
+                                                <h4 class="mb-3">What can help you?</h4>
+.
+                                                <p>Over Twenty years in business, We’ve had the chance on projects</p>
+
+                                                <div class="skill-thumb mt-3">
+
+                                                    <strong>Hardware Solutions</strong>
+                                                        <span class="float-end">90%</span>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                                                            </div>
+
+                                                    <strong>Networking & Infrastructure</strong>
+                                                        <span class="float-end">70%</span>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                                            </div>
+
+                                                    <strong>Software Development</strong>
+                                                        <span class="float-end">20%</span>
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20;"></div>
+                                                            </div>
+
+                                                </div>
+                                                
+                                                <div class="mt-2 mt-lg-auto">
+                                                    <a href="maintainance.html" class="custom-link mb-2">
+                                                        Explore products
+                                                        <i class="bi-arrow-right ms-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="clients" class="section-bg">
+
+                <div class="container">
           
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/2560px-Choice_Hotels_Intl_Logo.svg.png" class="img-fluid" alt="">
-            </div>
-          </div>
-        
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/aston-inn.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/Logo-AWS-new-descriptor.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/Golden-Tulip-Logo-old.png" class="img-fluid" alt="">
-            </div>
-          </div>
-        
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/1.Pen-Hotels-(Black)_bkg removed.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/Logo-emc.webp" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="images/Novotel-Logo.png" class="img-fluid" alt="">
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-<!-->
-    <script src="js/hamburgerbuttons.js"></script>
-
-  </body>
-  <script src="js/observer.js"></script>
-</main>
-<!--
-<footer>
-  <div class="container">
-      <div class="footer-top">
-          <div class="row">
-              <div class="col-md-6 col-lg-3 about-footer">
-                  <h3>Contact Us</h3>
-                  <ul>
-                      <li><a href="tel:(010) 1234 4321"><i class="ph-fill ph-phone" style="color: white"></i>  (010) 1234 4321</a></li>
-                      <li><i class="ph-fill ph-map-pin" style="color: white"></i>
-                            1 / 105 Bay Lights,
-                          <br/>Lorem Ipsum,
-                          <br/>LIC 3201
-                      </li>
-                      <li><a href=""><i class="ph-fill ph-instagram-logo" style="color: white"></i>  (010) 1234 4321</a></li>
-                  </ul>
-              </div>
-              <div class="col-md-6 col-lg-2 page-more-info">
-                  <div class="footer-title">
-                      <h4>Page links</h4>
+                  <div class="section-header fade-in">
+                    <div class="col-12 text-center">
+                        <h2 class="mb-2">Our Clients</h2>
+                        <p>Introducing Some of Our Satisfied Clientele</p>
+                    </div>
+                    
                   </div>
-                  <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Testimonial</a></li>
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Contact</a></li>
-                  </ul>
-              </div>
-
-              <div class="col-md-6 col-lg-3 page-more-info">
-                  <div class="footer-title">
-                      <h4>More Info</h4>
+          
+                  <div class="row no-gutters clients-wrap clearfix wow fadeInUp fade-in " style="visibility: visible; animation-name: fadeInUp;">
+          
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/AccorHotels_Logo_2016.svg.png" class="img-fluid" alt="">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/2560px-Choice_Hotels_Intl_Logo.svg.png" class="img-fluid" alt="">
+                      </div>
+                    </div>
+                  
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/aston-inn.png" class="img-fluid" alt="">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/Logo-AWS-new-descriptor.png" class="img-fluid" alt="">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/Golden-Tulip-Logo-old.png" class="img-fluid" alt="">
+                      </div>
+                    </div>
+                  
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/1.Pen-Hotels-(Black)_bkg removed.png" class="img-fluid" alt="">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/Logo-emc.webp" class="img-fluid" alt="">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                      <div class="client-logo">
+                        <img src="images/Novotel-Logo.png" class="img-fluid" alt="">
+                      </div>
+                    </div>
                   </div>
-                  <ul>
-                      <li><a href="#">Lorem ipsum</a></li>
-                      <li><a href="#">Dolor sit amet</a></li>
-                      <li><a href="#">Consectetur Adipisicing </a></li>
-                      <li><a href="#">Ed do eiusmod tempor incididunt</a></li>
-                  </ul>
-              </div>
-              
-      <hr>
-      <div class="footer-bottom">
-          <div class="row">
-              <div class="col-sm-4">
-                  <a href="">Privacy policy</a>
-              </div>
-              <div class="col-sm-8">
-                  <p>TransTel @ 2024 All rights reserved</p>
-              </div>
-          </div>
-      </div>
-  </div>
-</footer>
-<!-->
-  
+          
+                </div>
+          
+              </section>
+
+            <section class="front-product">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 col-12">
+                            <img src="images/teamwork.webp" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="px-5 py-5 py-lg-0">
+                                
+                                <h2 class="mb-4"><span>Discover</span>  Better Communication Solutions</h2>
+
+                                <p class="lead mb-4">Ready to take your business communication to the next level? Dive into our range of innovative solutions, designed to streamline your operations and keep your team connected like never before.</p>
+
+                                <a href="maintainance.html" class="custom-link">
+                                    Explore Products
+                                    <i class="bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-product section-padding">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-12 text-center">
+                            <h2 class="mb-5">Featured Products</h2>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                                <a href="maintainance.html">
+                                    <img src="images/Transtel/Phone Call Devices/IPX 3000/IPX 3000 - 3.jpg" class="img-fluid product-image" alt="">
+                                </a>
+
+                                <div class="product-top d-flex">
+                                   <!-- <<span class="product-alert me-auto">New Arrival</span>
+
+                                    <a href="#" class="bi-heart-fill product-icon"></a>-->
+                                </div>
+
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 class="product-title mb-0">
+                                            <a href="maintainance.html" class="product-title-link">PABX</a>
+                                        </h5>
+
+                                        <p class="product-p">Streamlined communication solutions for businesses. Seamlessly manage calls and enhance connectivity with our advanced PABX systems.</p>
+                                    </div>
+
+                                    <!--<small class="product-price text-muted ms-auto mt-auto mb-5">$25</small>-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12 mb-3">
+                            <div class="product-thumb">
+                                <a href="maintainance.html">
+                                    <img src="images/Transtel/Phone Call Devices/IPVH3/IPVH3 - 2.jpg" class="img-fluid product-image" alt="">
+                                </a>
+
+                               <!--  <div class="product-top d-flex">
+                                    <span class="product-alert">Low Price</span>
+
+                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+                                </div>
+                                        -->
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 class="product-title mb-0">
+                                            <a href="maintainance.html" class="product-title-link">Phone, Recording</a>
+                                        </h5>
+
+                                        <p class="product-p">Ensure security and compliance with our professional call recording systems. Capture and review important conversations effortlessly.</p>
+                                    </div>
+
+                                    <!--<small class="product-price text-muted ms-auto mt-auto mb-5">$35</small>-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="product-thumb">
+                                <a href="maintainance.html">
+                                    <img src="images/Transtel/Nurse Call System/NCP-CS Android Nurse Call Station/Android Nurse Call Station 2.jpg" class="img-fluid product-image" alt="">
+                                </a>
+
+                                <div class="product-top d-flex">
+                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+                                </div>
+
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 class="product-title mb-0">
+                                            <a href="maintainance.html" class="product-title-link">NURSE CALL</a>
+                                        </h5>
+
+                                        <p class="product-p">Prioritize patient care with our reliable nurse call systems. Streamline communication channels for rapid response and improved healthcare delivery.</p>
+                                    </div>
+
+                                    <!--<small class="product-price text-muted ms-auto mt-auto mb-5">$45</small>-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <a href="maintainance.html" class="view-all">View All Products</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-10 me-auto mb-4">
+                        <h4 class="text-white mb-3">TransTel</h4>
+                        <ul>
+                            <li><a href="tel:(021) 5435 6600"><i class="ph-fill ph-phone" style="color: white"></i> Phone: (021) 5435 6600</a></li>
+                            <li><a href=""><i class="ph-fill ph-instagram-logo" style="color: white"></i> Whatsapp: (081) 1918 1222</a></li>
+                        </ul>
+                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2024 All rights reserved </p>
+                        <br>
+
+                    </div>
+
+                    <div class="col-lg-5 col-8">
+                        <h5 class="text-white mb-3">Sitemap</h5>
+
+                        <ul class="footer-menu d-flex flex-wrap">
+
+                            <li class="footer-menu-item"><a href="products.html" class="footer-menu-link">Products</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
+
+                            <li class="footer-menu-item"><a href="downloads.html" class="footer-menu-link">Downloads</a></li>
+
+                            <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-4">
+                        <h5 class="text-white mb-3">Social</h5>
+
+                        <ul class="social-icon">
+
+                            <li><a href="https://www.youtube.com/@pabxtranstelkomunikasitds6739" class="social-icon-link bi-youtube"></a></li>
+
+                            <li><a href="https://api.whatsapp.com/send?phone=628119181222" class="social-icon-link bi-whatsapp"></a></li>
+
+                            <li><a href="https://www.instagram.com/transtelindonesia/" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="https://www.facebook.com/transtelindonesia97/" class="social-icon-link bi-facebook"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/Headroom.js"></script>
+        <script src="js/jQuery.headroom.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
 </html>
