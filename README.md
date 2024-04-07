@@ -69,7 +69,7 @@ To get started with the Transtel Communications website, follow these steps:
 
 1. Clone the repository to your local machine:
 ```
-git clone https://github.com/your-username/transtel-communications.git
+git clone https://github.com/L1M1N4L/transtel-communications-web.git
 ```
 2. Navigate to the project directory:
 ```
