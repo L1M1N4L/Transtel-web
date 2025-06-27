@@ -1,0 +1,113 @@
+{
+  "products": [
+    {
+      "id": "ip-ncd6",
+      "name": "IP-NCD6",
+      "fullName": "IP-NCD6 Nurse Call Device",
+      "description": "Advanced IP-based nurse call device for modern healthcare facilities. Features crystal clear voice communication, easy-to-use interface, and comprehensive emergency call capabilities.",
+      "shortDescription": "Advanced IP-based nurse call device",
+      "image": "images/Transtel/Nurse Call System/IP-NCD6 Nurse Call Device/Nurse Call Device 1.jpg",
+      "category": "Nurse Call System",
+      "specifications": {
+        "network": "IP-based communication",
+        "display": "High-resolution LCD display",
+        "connectivity": "Ethernet 10/100 Mbps",
+        "power": "PoE (Power over Ethernet) or DC 12V",
+        "dimensions": "180 x 120 x 35 mm",
+        "weight": "450g",
+        "operatingTemperature": "-10°C to +50°C",
+        "humidity": "10% to 90% (non-condensing)"
+      },
+      "features": [
+        "Crystal clear voice communication",
+        "Easy-to-use interface",
+        "LED status indicators",
+        "Emergency call button",
+        "Volume control",
+        "Call history",
+        "Network status monitoring",
+        "Remote configuration capability"
+      ],
+      "applications": [
+        "Hospitals",
+        "Nursing homes",
+        "Healthcare facilities",
+        "Patient rooms",
+        "Emergency departments"
+      ],
+      "relatedProducts": ["ncd-ldp", "ncp-be", "ncp-cc"]
+    },
+    {
+      "id": "ip-vh2",
+      "name": "IP VH2",
+      "fullName": "IP VH2 VoIP Phone",
+      "description": "High-quality IP phone for business communication with advanced features and crystal clear voice quality. Perfect for modern office environments and call centers.",
+      "shortDescription": "Professional VoIP phone for modern business",
+      "image": "images/Transtel/Phone Call Devices/IPVH2/IPVH2 - 2.jpg",
+      "category": "IP Phone",
+      "specifications": {
+        "network": "SIP protocol support",
+        "display": "2-line LCD display",
+        "connectivity": "10/100 Mbps Ethernet",
+        "power": "PoE or AC adapter",
+        "dimensions": "200 x 150 x 80 mm",
+        "weight": "500g",
+        "codecs": "G.711, G.722, G.729",
+        "operatingTemperature": "0°C to +40°C"
+      },
+      "features": [
+        "HD voice quality",
+        "Multiple line support",
+        "Call transfer and forwarding",
+        "Conference calling",
+        "Speed dial",
+        "Call history",
+        "Volume control",
+        "Headset support"
+      ],
+      "applications": [
+        "Office environments",
+        "Call centers",
+        "Business communication",
+        "Remote work setups"
+      ],
+      "relatedProducts": ["ip-vh3", "ip-77f1", "ip-v3786"]
+    },
+    {
+      "id": "dkp-93",
+      "name": "DKP 93",
+      "fullName": "DKP 93 Digital KeyPhone",
+      "description": "Digital keyphone system for business communication with programmable function keys and LCD display. Ideal for reception areas and professional environments.",
+      "shortDescription": "Digital keyphone for business communication",
+      "image": "images/Transtel/Phone Call Devices/DKP 93/DKP 93.jpg",
+      "category": "Digital KeyPhone",
+      "specifications": {
+        "type": "Digital keyphone",
+        "display": "LCD display with backlight",
+        "lines": "Multiple line support",
+        "power": "DC 24V",
+        "dimensions": "200 x 150 x 80 mm",
+        "weight": "500g",
+        "keys": "Programmable function keys",
+        "operatingTemperature": "0°C to +40°C"
+      },
+      "features": [
+        "Digital communication",
+        "Programmable keys",
+        "LCD display",
+        "Multiple line support",
+        "Call transfer",
+        "Conference calling",
+        "Speed dial",
+        "Hold function"
+      ],
+      "applications": [
+        "Business offices",
+        "Reception areas",
+        "Conference rooms",
+        "Professional environments"
+      ],
+      "relatedProducts": ["dk6-21", "dk6-31b", "dk6-dss"]
+    }
+  ]
+} 
