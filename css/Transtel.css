@@ -1055,7 +1055,7 @@ button:focus:not(:focus-visible) {
   SITE FOOTER               
 -----------------------------------------*/
 .site-footer {
-  background: var(--dark-color);
+  background: #58585b;
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
@@ -1071,7 +1071,7 @@ button:focus:not(:focus-visible) {
 }
 
 .footer-menu-link {
-  color: #6c757d;
+  color: #e9ecef;
   font-weight: var(--font-weight-light);
   display: inline-block;
   vertical-align: top;
@@ -1081,15 +1081,37 @@ button:focus:not(:focus-visible) {
 
 .site-footer .social-icon-link {
   margin-top: 4px;
+  color: #e9ecef;
 }
 
 .site-footer .social-icon-link:hover,
 .footer-menu-link:hover {
-  color: var(--white-color);
+  color: var(--primary-color);
 }
 
 .copyright-text {
   font-size: var(--copyright-text-font-size);
+  color: #adb5bd;
+}
+
+/* Override inline styles and Bootstrap classes for footer contact info */
+.site-footer ul li a {
+  color: #e9ecef !important;
+}
+
+.site-footer .text-muted {
+  color: #e9ecef !important;
+}
+
+/* Make footer list bullets white */
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer ul li {
+  color: #e9ecef;
+  margin-bottom: 8px;
 }
 
 /*---------------------------------------
@@ -1916,5 +1938,105 @@ button:focus:not(:focus-visible) {
     flex: 0 0 100%;
     max-width: 100%;
   }
+}
+
+/*---------------------------------------
+  SIDEBAR STYLES               
+-----------------------------------------*/
+.sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.sidebar-title {
+    color: var(--dark-color);
+    font-weight: var(--font-weight-bold);
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--section-bg-color);
+}
+
+.sidebar-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-category-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--p-color);
+    font-size: 14px;
+    font-weight: var(--font-weight-normal);
+    text-align: left;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+}
+
+.sidebar-category-btn:hover {
+    background: var(--section-bg-color);
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.sidebar-category-btn.active {
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-weight: var(--font-weight-bold);
+}
+
+.sidebar-category-btn i {
+    font-size: 16px;
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: static;
+        margin-bottom: 30px;
+    }
+    
+    .sidebar-categories {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .sidebar-category-btn {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .sidebar-category-btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sidebar-title {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    
+    .sidebar-category-btn {
+        font-size: 13px;
+        padding: 10px 12px;
+        min-width: 120px;
+    }
+    
+    .sidebar-category-btn i {
+        font-size: 14px;
+        margin-right: 8px;
+    }
 }
 
