@@ -596,6 +596,10 @@ strong {
   object-fit: cover;
 }
 
+.slick-custom img.slick-blur {
+  filter: blur(6px);
+}
+
 .slick-bottom {
   background: linear-gradient(to top, var(--dark-color), transparent 90%);
   position: absolute;
