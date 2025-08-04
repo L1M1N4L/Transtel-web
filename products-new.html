@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransTel - FlyingVoice Style Dropdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: white;
+            border-bottom: 1px solid #e9ecef;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #1e88e5, #42a5f5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1e88e5;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 25px 0;
+            transition: color 0.2s ease;
+            display: block;
+        }
+
+        .nav-link:hover,
+        .nav-item:hover .nav-link {
+            color: #1e88e5;
+        }
+
+        .products-link {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .products-link:hover {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            width: 1200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+            overflow: hidden;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-container {
+            display: flex;
+            height: 500px;
+        }
+
+        .sidebar {
+            width: 200px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 30px 0;
+        }
+
+        .sidebar-category {
+            display: block;
+            width: 100%;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            font-size: 14px;
+            border: none;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-category:hover {
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .sidebar-category.active {
+            background: #e3f2fd;
+            color: #1e88e5;
+            border-left-color: #1e88e5;
+            font-weight: 600;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .category-column {
+            min-height: 150px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f3f4;
+        }
+
+        .product-list {
+            list-style: none;
+        }
+
+        .product-item {
+            margin-bottom: 2px;
+        }
+
+        .product-link {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 8px 0;
+            display: block;
+            transition: color 0.2s ease;
+            line-height: 1.4;
+        }
+
+        .product-link:hover {
+            color: #1e88e5;
+        }
+
+        /* Category-specific styling */
+        .pabx .category-title {
+            color: #1e88e5;
+            border-bottom-color: #1e88e5;
+        }
+
+        .telephone .category-title {
+            color: #7c3aed;
+            border-bottom-color: #7c3aed;
+        }
+
+        .nurse-call .category-title {
+            color: #059669;
+            border-bottom-color: #059669;
+        }
+
+        .voice-logger .category-title {
+            color: #dc2626;
+            border-bottom-color: #dc2626;
+        }
+
+        .gpon .category-title {
+            color: #ea580c;
+            border-bottom-color: #ea580c;
+        }
+
+        .gateway .category-title {
+            color: #7c2d12;
+            border-bottom-color: #7c2d12;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .contact-btn {
+            padding: 12px 24px;
+            border: 2px solid #1e88e5;
+            color: #1e88e5;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            background: #1e88e5;
+            color: white;
+        }
+
+        .store-btn {
+            padding: 12px 24px;
+            background: #1e88e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .store-btn:hover {
+            background: #1565c0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 136, 229, 0.3);
+        }
+
+        .demo-content {
+            text-align: center;
+            margin-top: 100px;
+            padding: 0 40px;
+        }
+
+        .demo-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .demo-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1200px) {
+            .dropdown {
+                width: 90vw;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .sidebar {
+                width: 100%;
+                display: flex;
+                overflow-x: auto;
+                padding: 20px 0;
+            }
+            
+            .sidebar-category {
+                white-space: nowrap;
+                padding: 10px 20px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">T</div>
+                <div class="logo-text">TRANSTEL</div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link products-link">Products</a>
+                    
+                    <div class="dropdown">
+                        <div class="dropdown-container">
+                            <div class="sidebar">
+                                <button class="sidebar-category active" data-category="pabx">PABX</button>
+                                <button class="sidebar-category" data-category="telephone">Telephone</button>
+                                <button class="sidebar-category" data-category="nurse-call">Nurse Call</button>
+                                <button class="sidebar-category" data-category="voice-logger">Voice Logger</button>
+                                <button class="sidebar-category" data-category="gpon">GPON</button>
+                                <button class="sidebar-category" data-category="gateway">Gateway</button>
+                            </div>
+                            
+                            <div class="content-area">
+                                <!-- PABX Content -->
+                                <div class="content-section active pabx" data-category="pabx">
+                                    <div class="product-grid">
+                                        <div class="category-column">
+                                            <h3 class="category-title">IP PABX Series</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">IPX 300</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">IPX 1000</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">IPX 3000</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Hybrid IP PABX</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">IPX 100</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">IPX 800</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">PABX Accessories</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">Extension Cards</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Power Supplies</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Mounting Kits</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Telephone Content -->
+                                <div class="content-section telephone" data-category="telephone">
+                                    <div class="product-grid">
+                                        <div class="category-column">
+                                            <h3 class="category-title">IP Phone</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">IP VH2</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">IP VH3</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">IP 77F1</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">IP V3786</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Digital KeyPhone</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">DKP 93</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">DKP DSS60</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Analog Phone</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">AH-99 BN</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">AH-99 PS</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">AK-77</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Nurse Call Content -->
+                                <div class="content-section nurse-call" data-category="nurse-call">
+                                    <div class="product-grid">
+                                        <div class="category-column">
+                                            <h3 class="category-title">Call Devices</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">IP-NCD6 Nurse Call Device</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">NCP-BE Bath Emergency Call</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">NCP-CC Call Cord</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Display & Control</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">NCD-LDP LED Display Panel</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">NCP-CL Corridor Lamp</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">NCP-CS Android Station</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">System Server</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">NCS Nurse Call Centre Server</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Management Software</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Reporting Tools</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Voice Logger Content -->
+                                <div class="content-section voice-logger" data-category="voice-logger">
+                                    <div class="product-grid">
+                                        <div class="category-column">
+                                            <h3 class="category-title">Recording Systems</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">VL-100 Voice Logger</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">VL-200 Advanced Logger</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">VL-Enterprise</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Storage Solutions</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">High Capacity Storage</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Cloud Integration</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Backup Systems</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Analytics</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">Call Analytics</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Quality Monitoring</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Compliance Tools</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- GPON Content -->
+                                <div class="content-section gpon" data-category="gpon">
+                                    <div class="product-grid">
+                                        <div class="category-column">
+                                            <h3 class="category-title">OLT Equipment</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">OLT-1000 Series</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">OLT-2000 Series</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Compact OLT</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">ONT/ONU Devices</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">ONT-100 Basic</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">ONT-200 Advanced</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">WiFi ONT</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Optical Components</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">Optical Splitters</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Fiber Cables</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Connectors</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gateway Content -->
+                                <div class="content-section gateway" data-category="gateway">
+                                    <div class="product-grid">
+                                        <div class="category-column">
+                                            <h3 class="category-title">VoIP Gateways</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">GW-100 Basic Gateway</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">GW-200 Advanced Gateway</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">GW-Enterprise</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">SIP Gateways</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">SIP-GW-4 Port</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">SIP-GW-8 Port</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">SIP-GW-16 Port</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="category-column">
+                                            <h3 class="category-title">Protocol Converters</h3>
+                                            <ul class="product-list">
+                                                <li class="product-item"><a href="#" class="product-link">Analog Converter</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Digital Converter</a></li>
+                                                <li class="product-item"><a href="#" class="product-link">Media Gateway</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Solutions</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Downloads</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Support</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Partners</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Company</a>
+                </li>
+            </ul>
+            
+            <div class="action-buttons">
+                <a href="#" class="contact-btn">CONTACT</a>
+                <a href="#" class="store-btn">STORE</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="demo-content">
+        <h1 class="demo-title">TransTel Products</h1>
+        <p class="demo-subtitle">
+            Hover over "Products" and click the left sidebar categories to explore our comprehensive communication solutions.
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarCategories = document.querySelectorAll('.sidebar-category');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            sidebarCategories.forEach(category => {
+                category.addEventListener('click', function() {
+                    // Remove active class from all categories
+                    sidebarCategories.forEach(cat => cat.classList.remove('active'));
+                    // Add active class to clicked category
+                    this.classList.add('active');
+
+                    // Hide all content sections
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    // Show the selected content section
+                    const targetCategory = this.getAttribute('data-category');
+                    const targetSection = document.querySelector(`.content-section[data-category="${targetCategory}"]`);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
